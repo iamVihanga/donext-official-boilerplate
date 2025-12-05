@@ -1,0 +1,23 @@
+{
+  "name": "nextplate-worker",
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "wrangler dev",
+    "dev:local": "wrangler dev --local",
+    "db-migrate-local": "wrangler d1 migrations apply nextplate-worker-d1 --local",
+    "deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+  },
+  "dependencies": {
+    "@hono/zod-openapi": "^1.1.3",
+    "@repo/core": "workspace:^",
+    "@scalar/hono-api-reference": "^0.9.19",
+    "hono": "^4.9.8",
+    "stoker": "^2.0.1",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "wrangler": "^4.39.0"
+  }
+}

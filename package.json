@@ -1,0 +1,25 @@
+{
+  "name": "nextplate-cloudflare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "setup": "pnpm i && pnpm run build:core",
+    "build:core": "pnpm run --filter core build",
+    "dev:worker": "pnpm run --filter nextplate-worker dev",
+    "deploy:worker": "pnpm run build:core && pnpm run --filter nextplate-worker deploy"
+  },
+  "keywords": [],
+  "author": "iamVihanga",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1",
+  "devDependencies": {
+    "@types/node": "^22.17.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.15.15",
+    "better-sqlite3": "^12.4.1",
+    "drizzle-orm": "^0.44.5"
+  }
+}
